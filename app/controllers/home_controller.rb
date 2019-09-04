@@ -18,12 +18,11 @@ class HomeController < ApplicationController
   private
 
   def edit_customer_params
-    params.require(:home).
-      permit(
-        :name,
-        :phone,
-        :description,
-        :in_black_list
-      )
+    params.require(:customer).permit(
+      :name,
+      :phone,
+      :description,
+      :in_black_list
+    )
   end
 end

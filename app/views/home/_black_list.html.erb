@@ -1,0 +1,40 @@
+<header>
+  <h1>Черный список</h1>
+</header>
+
+<p>
+  <%= link_to(
+        'Список клиентов',
+        home_index_path(list: :white),
+      )
+  %>
+</p>
+
+<table>
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>Имя</th>
+    <th>Телефон</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @customers.each do |customer| %>
+    <% if customer.in_black_list != false %>
+      <tr>
+        <td><%= customer.id %></td>
+        <td><%= customer.name %></td>
+        <td><%= customer.phone %></td>
+        <td>
+          <%= link_to(
+                'Редактировать',
+                edit_home_path(id: customer.id),
+              )
+          %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>

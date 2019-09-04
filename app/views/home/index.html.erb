@@ -1,32 +1,5 @@
-<header>
-  <h1>Список клиентов</h1>
-</header>
-
-<table>
-  <thead>
-  <tr>
-    <th>id</th>
-    <th>Имя</th>
-    <th>Телефон</th>
-    <th></th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @customers.each do |customer| %>
-    <% if customer.in_black_list == false %>
-      <tr>
-        <td><%= customer.id %></td>
-        <td><%= customer.name %></td>
-        <td><%= customer.phone %></td>
-        <td>
-          <%= link_to(
-                'Редактировать',
-                edit_home_path(id: customer.id),
-              )
-          %>
-        </td>
-      </tr>
-    <% end %>
-  <% end %>
-  </tbody>
-</table>
+<% if params[:list] == 'black' %>
+  <%= render 'black_list' %>
+<% else %>
+  <%= render 'white_list' %>
+<% end %>
