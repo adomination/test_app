@@ -1,7 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+customer_attributes = [
+  { name: 'Andrew', phone: '+7-123-456-12-90', description: 'first customer' },
+  { name: 'Dmitry', phone: '+7-567-234-23-34', description: 'second customer' },
+  { name: 'Sergey', phone: '+7-945-567-45-56', description: 'third customer' },
+  { name: 'Jhon', phone: '+7-456-234-56-67', description: 'fourth customer' },
+  { name: 'Liza', phone: '+7-245-687-67-23', description: 'fifth customer' }
+]
+
+customer_attributes.each do |attr|
+  Customer.where(attr).first_or_create
+end
