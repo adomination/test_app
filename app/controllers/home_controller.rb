@@ -15,6 +15,12 @@ class HomeController < ApplicationController
     end
   end
 
+  def update_status
+    customer = Customer.find(params[:id])
+    customer.update!(in_black_list: false)
+    redirect_to action: :index
+  end
+
   private
 
   def edit_customer_params
