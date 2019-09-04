@@ -1,6 +1,6 @@
 <h1>Редактирование</h1>
 
-<%= form_for :home, url: home_path, method: :patch do |form| %>
+<%= form_for @customer, url: home_path, method: :patch do |form| %>
   <p>
     <%= form.label :name, 'Имя' %>
     <%= form.text_field :name %>
