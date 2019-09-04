@@ -17,6 +17,7 @@
     <th>Имя</th>
     <th>Телефон</th>
     <th></th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
@@ -30,6 +31,13 @@
           <%= link_to(
                 'Редактировать',
                 edit_home_path(id: customer.id),
+              )
+          %>
+        </td>
+        <td>
+          <%= link_to(
+                'Исключить',
+                update_status_home_path(id: customer.id),
               )
           %>
         </td>
