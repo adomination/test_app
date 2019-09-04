@@ -1,0 +1,27 @@
+<h1>Редактирование</h1>
+
+<%= form_for :home, url: home_path, method: :patch do |form| %>
+  <p>
+    <%= form.label :name, 'Имя' %>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :phone, 'Телефон' %>
+    <%= form.text_field :phone %>
+  </p>
+
+  <p>
+    <%= form.label :description, 'Описание' %>
+    <%= form.text_field :description %>
+  </p>
+
+  <p>
+    <%= form.label :description, 'В черном списке?' %>
+    <%= form.check_box :in_black_list %>
+  </p>
+
+  <p>
+    <%= form.submit 'Сохранить' %>
+  </p>
+<% end %>
