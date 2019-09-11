@@ -21,6 +21,12 @@ class HomeController < ApplicationController
     redirect_to action: :index
   end
 
+  def add_phone
+    customer = Customer.where(phone: params[:phone])
+    customer.update(in_black_list: true)
+    redirect_to(home_index_path(list: :black))
+  end
+
   private
 
   def edit_customer_params

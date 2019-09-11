@@ -10,6 +10,10 @@
   %>
 </p>
 
+<p>
+ <%= render 'add_by_phone', customer: @customer %>
+</p>
+
 <table>
   <thead>
   <tr>
@@ -37,7 +41,8 @@
         <td>
           <%= link_to(
                 'Исключить',
-                update_status_home_path(id: customer.id),
+                update_status_home_index_path(id: customer.id),
+                method: :post,
               )
           %>
         </td>

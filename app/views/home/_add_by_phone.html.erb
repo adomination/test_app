@@ -1,0 +1,14 @@
+<%= form_tag(add_phone_home_index_path, method: :post) do %>
+  Добавить в черный список по номеру телефона:
+  <div>
+    <input
+      type="text"
+      name="phone"
+      required
+      placeholder="номер телефона"
+    >
+  </div>
+  <div>
+    <%= submit_tag 'Добавить' %>
+  </div>
+<% end %>
